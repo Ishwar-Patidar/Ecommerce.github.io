@@ -1,0 +1,36 @@
+.font-size {
+    font-size: 13px;
+}
+
+.categoryMenu {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.MenuIcon {
+    color: Black;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.caretRight {
+    display: inline-block;
+    color: black;
+}
+
+.caretRight1 {
+    color: black;
+    display: none;
+}
+
+.caretDown {
+    color: black;
+    display: none
+}
+
+.caretDown1 {
+    color: black;
+    display: inline-block;
+}

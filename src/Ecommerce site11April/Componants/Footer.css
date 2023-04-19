@@ -1,0 +1,10 @@
+.footerLists li a{
+    color: #6e7891 !important;
+    font-size: 12px;
+    font-weight:600;
+}
+.FooterDesc{
+    color: #6e7891;
+    font-size: 13px;
+    word-spacing: 1px;
+}

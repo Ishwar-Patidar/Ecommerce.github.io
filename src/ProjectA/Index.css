@@ -1,0 +1,13 @@
+.CartPage {
+    height: 100vh;
+    overflow: scroll;
+}
+/* table css */
+th {
+    font-size: 16px;
+}
+
+td {
+    font-size: 14px;
+    min-width: 60px;
+}

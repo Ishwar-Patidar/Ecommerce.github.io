@@ -1,0 +1,22 @@
+.searchBar {
+    color: rgba(124, 119, 119, 0.801);
+    border-color: rgba(124, 119, 119, 0.801);
+    font-size: 12px;
+}
+.SunIcon path{
+    color:  orange;
+}
+.SunIcon path:hover{
+    color:  white;
+}
+.SunIcon{ 
+    background-color: rgba(255, 166, 0, 0.281);
+    border-radius: 50%;
+}
+
+.SunIcon:hover {
+    background-color: orange;
+    border-radius: 50%;
+    color: white;
+
+}

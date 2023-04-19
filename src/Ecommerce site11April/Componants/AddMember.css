@@ -1,0 +1,15 @@
+.Member h3 {
+    line-height: 5px !important;
+}
+
+.LineHeight {
+    line-height: 5px;
+    font-size: 50px !important;
+    font-weight: 800;
+}
+.signUpBtn{
+    font-size: 1.2em;
+    padding: 10px 36.1px;
+    font-weight: 500;
+    border-radius: 7px;
+}
