@@ -22,7 +22,7 @@ function TopDealcard() {
                                 </span>
                             </div>
                             <div className="d-flex fw-bolder">
-                                <a href="#"> Explor More </a> &nbsp;
+                                <a className="text-primary" href="#"> Explor More </a> &nbsp;
                                 <span className="text-primary"> &#62; </span>
                             </div>
                         </div>

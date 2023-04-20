@@ -10,8 +10,8 @@ function BestProducts() {
                         <div className="d-flex">
                             <h3 className="productHeading fw-bolder">Best Offers</h3>
                         </div>
-                        <div className="d-flex fw-bolder">
-                            <a href="#">Explore More </a> &nbsp;
+                        <div className="d-flex fw-bolder ">
+                            <a className="text-primary" href="#">Explore More </a> &nbsp;
                             <span className="text-primary"> &#62; </span>
                         </div>
                     </div>

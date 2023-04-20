@@ -22,30 +22,44 @@ a:hover {
   width: 200px;
 }
 
+/* ......................Wisth button css start.......................... */
 .productCrdBtn {
   position: absolute;
   height: 2rem;
   width: 2rem;
   right: 5px;
   top: 10px;
-  background-color: rgb(250, 187, 187);
-  color: #0030a1;
+  background-color: rgb(253, 253, 253);
+  color: #3874ff;
 }
-.productCrdBtn:hover{
-  background-color: rgb(26, 2, 148);
+
+.productCrdBtn:hover {
+  background-color:#3874ff;
 }
 
 .filledIcon {
-  /* display: block; */
+  position: absolute;
+  display: block;
   padding: 0.5rem;
   color: rgb(255, 255, 255);
+  top: 0;
 }
 
-.unFilledIcon {
-  /* display: none; */
-  padding: 0.5rem;
-  color: #3874ff;
+.filledIcon:hover {
+  display: none;
 }
+
+.filledIcon:active {
+  display: none;
+}
+.unFilledIcon {
+  position: absolute;
+  padding: 0.5rem;
+  color:#3874ff;
+  top: 0;
+  left: 0;
+}
+/* ......................Wisth button css End.......................... */
 
 .card-body .title {
   font-size: 14px;
