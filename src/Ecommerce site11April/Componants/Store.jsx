@@ -1,10 +1,11 @@
 import React from "react";
+import SingalItemDetail from "./SingalItemDetail";
 
 function Store() {
-
     return (
         <>
-            <div>                 
+            <div>  
+               <SingalItemDetail/>
                Store
             </div>
         </>

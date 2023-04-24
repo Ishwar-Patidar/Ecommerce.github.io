@@ -8,7 +8,7 @@ function Menubar() {
   const [caretRight, setCaretRight] = useState("caretRight");
   const [caretDown, setCaretDown] = useState("caretDown")
 
-  function categoryModalcaret(e) {
+  function categoryModalcaret() {
    if(caretRight === "caretRight"){   
      setCaretRight("caretRight1")
     }else(  

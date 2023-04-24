@@ -1,20 +1,24 @@
 import React, { useContext } from "react";
-import { dataContext } from "./EcommerseContext/EcContext";
+import proContext from "./EcommerseContext/ApIContext/ProductContext";
+// import { dataContext } from "./EcommerseContext/EcContext";
 import './Navbar.css'
+import PersonDetail from "./PersonDetail";
 
 function Navbar() {
 
 
-    const { data, setData } = useContext(dataContext);
+    const { data, setData } = useContext(proContext);
     function searchHandler(event) {
         const value = event.target.value;
         setData(value);
     }
-
-
+    function darkMode() {
+        let docs = document.body;
+        return docs.classList.toggle("dark-mode")
+    }
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light  pb-0">
+            <nav className="navbar navbar-expand-lg navbar-light  pb-0">
                 <div className="container-fluid  ">
                     <div className="row  w-100 d-flex justify-content-between align-items-center">
                         <div className="col-md-2 col-sm-6 col-xs-6 order-lg-1">
@@ -29,8 +33,8 @@ function Navbar() {
                         <div className="col-md-2 col-sm-6 col-xs-6 d-inline-flex  order-lg-3 ">
                             <div className="collapse navbar-collapse d-inline-flex " id="navbarSupportedContent">
                                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0   flex-row">
-                                    <li className="nav-item">
-                                        <a className="nav-link active" href="#">
+                                    <li className="nav-item" >
+                                        <a className="nav-link active" href="#" onClick={darkMode}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className=" bi bi-brightness-high text-dark SunIcon  p-1" viewBox="0 0 16 16">
                                                 <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                                             </svg>
@@ -61,15 +65,19 @@ function Navbar() {
                                     </li>
 
                                     <li className="nav-item ">
-                                        <a className="nav-link " href="#">
-                                            {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className=" bi bi-person" viewBox="0 0 16 16">
-                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
-                                            </svg> */}
 
-                                            <span class="material-symbols-outlined text-dark">
-                                                person
-                                            </span>
-                                        </a>
+                                        <div className="dropdown btn-group dropstart">
+                                            <a className=" dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span className="material-symbols-outlined text-dark">
+                                                    person
+                                                </span>
+                                            </a>
+                                            <div className="dropdown-menu DropdownMenu ">
+                                                <div className="dropdown-item">
+                                                    <PersonDetail />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -82,6 +90,7 @@ function Navbar() {
                                 </form>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </nav>

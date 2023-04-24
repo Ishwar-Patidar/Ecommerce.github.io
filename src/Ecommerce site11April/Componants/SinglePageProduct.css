@@ -1,0 +1,80 @@
+
+.indicatorImg{
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+        justify-content: center;
+        padding: 0;
+        margin-right: 15%;
+        margin-bottom: 1rem;
+        margin-left: 15%;
+        list-style: none;
+}
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 2px 3px;
+    text-indent: 0;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: 1;
+    transition: opacity .6s ease;
+}
+
+
+/* =================================================================== */
+.ratedPeople{
+    color: #3874ff;;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.bestSller{
+    color: white;
+    background-color: rgb(17, 170, 3);
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+}
+
+/* ......... ............................*/
+.SingalPagenewPrice{
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.SingalPageOldPrice del{
+    color: #7e7e7e;
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.discount{
+    color:  rgb(255, 123, 0);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.stockAvailable{
+    color: rgb(17, 170, 3);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* ............................ */
+.Sizebox{
+padding: 0.5rem 1.5rem;
+margin-top: 1rem;
+}
+
+.ChartSize{
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+}

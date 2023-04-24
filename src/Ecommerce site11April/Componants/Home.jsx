@@ -17,7 +17,7 @@ function Home(){
        <TopElectronic/>
        <BestProducts/>
        <AddMember/>
-       <CustmizeGearIcon/>
+       {/* <CustmizeGearIcon/> */}
         </>
     )
 }

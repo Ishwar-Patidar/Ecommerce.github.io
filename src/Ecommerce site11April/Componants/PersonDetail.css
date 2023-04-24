@@ -1,0 +1,49 @@
+.profileImg {
+    height: 100px;
+    width: 100px;
+    white-space: normal !important;
+}
+
+.profileImage {
+    border-radius: 50%;
+}
+
+.updateStatusInput {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+.ProfileLink {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.profileFooter {
+    display: flex;
+    color: rgba(0, 0, 0, 0.671);
+    font-size: 12px;
+
+}
+
+.profileFooter ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ProfileSignOutBtn {
+    border-color: rgba(0, 0, 0, 0.418);
+    font-size: 14px;
+    width: 80%;
+}
+
+.ProfileSignOutBtn:hover {
+    background-color: rgba(0, 0, 0, 0.418);
+}
+
+.profileList{
+  height: 170px;  
+  width: 100%;
+  overflow-y: scroll;
+}
