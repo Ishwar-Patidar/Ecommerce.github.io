@@ -5,11 +5,11 @@ const proContext = createContext();
 
 export function ProductContext(props) {
 
-    const [ productList, setProductList ] = useState(dataList);
-    const [ singalProduct, setSingalProduct ] = useState({});
-    const [ data, setData ] = useState("");
+    const [productList, setProductList] = useState(dataList);
+    const [singalProduct, setSingalProduct] = useState({});
+    const [data, setData] = useState("");
     return (
-        <proContext.Provider value = {{ productList, setProductList,  singalProduct, setSingalProduct, data, setData }}>
+        <proContext.Provider value={{ productList, setProductList, singalProduct, setSingalProduct, data, setData }}>
             {props.children}
         </proContext.Provider>
     )

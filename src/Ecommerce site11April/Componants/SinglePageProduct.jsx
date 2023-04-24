@@ -1,15 +1,25 @@
 import React, { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
 import proContext from "./EcommerseContext/ApIContext/ProductContext";
 import './SinglePageProduct.css';
 
 function SinglePageProduct() {
 
     const { productList, singalProduct } = useContext(proContext); //get value from context
+    
+    
+    const {productid} = useParams()
+    const thisProduct = productList.find(prod => prod.id == productid)
+    
+    console.log(thisProduct.itemName)
+
+
+
 
     //............Match singal product id to main Datalist............
-    const SingalProductData = productList.filter((value) => {
-        return value.id == singalProduct
-    })
+    // const SingalProductData = productList.filter((value) => {
+    //     return value.id == singalProduct
+    // })
 
     //............Product Value Increment and Decrement for buy ..............
     const [item, setItem] = useState(1);
@@ -34,8 +44,8 @@ function SinglePageProduct() {
         <>
             <div className="container-fluid">
 
-                {SingalProductData.map((value) => {
-                    return (<div className="row my-3">
+               
+                    <div className="row my-3">
                         <div className="col-lg-6">
                             <div className="row">
 
@@ -44,13 +54,13 @@ function SinglePageProduct() {
                                     {/* ......for Indicator Image........ */}
                                     <div className="carousel-indicators indicatorImg">
                                         <button className=" border rounded active" type="button" data-bs-target="#Indicators" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">
-                                            <img src={value.image} className="img-fluid" alt="Loading..." />
+                                            <img src={thisProduct.image} className="img-fluid" alt="Loading..." />
                                         </button>
                                         <button className=" border rounded" type="button" data-bs-target="#Indicators" data-bs-slide-to="1" aria-label="Slide 2">
-                                            <img src={value.image} className="img-fluid" alt="Loading..." />
+                                            <img src={thisProduct.image} className="img-fluid" alt="Loading..." />
                                         </button>
                                         <button className=" border rounded" type="button" data-bs-target="#Indicators" data-bs-slide-to="2" aria-label="Slide 3">
-                                            <img src={value.image} className="img-fluid" alt="Loading..." />
+                                            <img src={thisProduct.image} className="img-fluid" alt="Loading..." />
                                         </button>
                                     </div>
                                 </div>
@@ -60,13 +70,13 @@ function SinglePageProduct() {
                                     <div id="Indicators" className="carousel slide" data-bs-ride="true">
                                         <div className="carousel-inner">
                                             <div className="carousel-item active">
-                                                <img src={value.image} className="d-block w-100" alt="Loading..." />
+                                                <img src={thisProduct.image} className="d-block w-100" alt="Loading..." />
                                             </div>
                                             <div className="carousel-item">
-                                                <img src={value.image} className="d-block w-100" alt="Loading..." />
+                                                <img src={thisProduct.image} className="d-block w-100" alt="Loading..." />
                                             </div>
                                             <div className="carousel-item">
-                                                <img src={value.image} className="d-block w-100" alt="Loading..." />
+                                                <img src={thisProduct.image} className="d-block w-100" alt="Loading..." />
                                             </div>
                                         </div>
                                     </div>
@@ -102,11 +112,11 @@ function SinglePageProduct() {
                                     </svg>
                                 </span> &nbsp;
 
-                                <span className="ratedPeople">{value.rating}</span>
+                                <span className="ratedPeople">{thisProduct.rating}</span>
                             </div>
 
                             <div>
-                                <h4 className="fw-bolder"> {value.itemName} </h4>
+                                <h4 className="fw-bolder"> {thisProduct.itemName} </h4>
                             </div>
 
                             <div className="mt-1">
@@ -115,10 +125,10 @@ function SinglePageProduct() {
                             </div>
 
                             <div>
-                                <span className="SingalPagenewPrice me-3"> Rs{value.newPrice} </span>
-                                <span className="SingalPageOldPrice me-3"> <del> Rs{value.oldPrice}</del> </span>
-                                <span className="discount me-3"> {value.discount} Off </span><br />
-                                <span className="stockAvailable text-success" > {value.available} </span>
+                                <span className="SingalPagenewPrice me-3"> Rs{thisProduct.newPrice} </span>
+                                <span className="SingalPageOldPrice me-3"> <del> Rs{thisProduct.oldPrice}</del> </span>
+                                <span className="discount me-3"> {thisProduct.discount} Off </span><br />
+                                <span className="stockAvailable text-success" > {thisProduct.available} </span>
                             </div>
 
                             <div>
@@ -151,8 +161,8 @@ function SinglePageProduct() {
                             </div>
                         </div>
                     </div>
-                    )
-                })}
+                    
+             
 
             </div>
         </>
