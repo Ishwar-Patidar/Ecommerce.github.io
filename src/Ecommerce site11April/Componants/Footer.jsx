@@ -8,7 +8,7 @@ function Footer() {
                 <div className="row">
                     <div className="col-lg-4 ">
                         <div className="mb-3">
-                            <span><img className="img img-fluid" src="./images/EcommerseImages/logo.png" alt="" height={30} width={30} /></span>
+                            <span><img className="img img-fluid" src = "./images/EcommerseImages/logo.png" alt="" height={30} width={30} /></span>
                             <span className="fs-4 text-black-50 fw-bolder"> phoenix </span>
                         </div>
                         <p className="FooterDesc">Phoenix is an admin dashboard template with fascinating features and amazing layout. The template is responsive to all major browsers and is compatible with all available devices and screen sizes.</p>

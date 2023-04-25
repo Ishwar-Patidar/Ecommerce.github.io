@@ -21,8 +21,8 @@ function Index() {
             <Navbar />
             <Menubar />
             <Routes path="Home/" element={<Home />}>
-            <Route path="SingalPageProduct" element={<SinglePageProduct />} />
-                <Route path="SingalPageProduct/:productid" element={<SinglePageProduct />} />
+                {/* <Route path="SingalPageProduct" element={<SinglePageProduct />} /> */}
+                <Route path="SingalPageProduct/:id" element={<SinglePageProduct />} />
                 <Route path="store" element={<Store />} />
                 <Route path="products" element={<Product />} />
                 <Route path="Wishlist" element={<Wishlist />} />

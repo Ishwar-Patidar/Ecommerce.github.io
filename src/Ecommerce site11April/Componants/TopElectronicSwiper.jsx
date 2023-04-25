@@ -16,14 +16,12 @@ export default function TopElectronicSwiper() {
 
     const { productList, singalProduct, setSingalProduct, data } = useContext(proContext);
 
-    // if (data.length <= 0) {
-    //     var result = productList
-    // } else {
-    //     var result = productList.filter(e => e.newPrice == data);
-    // }
-
-    // console.log(productList.find((e) => e.id == singalProduct))
-
+    console.log(singalProduct)
+    if (data.length <= 0) {
+        var result = productList
+    } else {
+        var result = productList.filter(e => e.newPrice == data);
+    }
 
     // .................for send object................
     // const clickHandler = (e, index)=>{
@@ -31,19 +29,20 @@ export default function TopElectronicSwiper() {
     // }
 
     // ...............for send id only................
-    // const clickHandler = (id, index) => {
-    //     return setSingalProduct(id);
-    // }
+    const clickHandler = (id, index) => {
+        return setSingalProduct(id);
+    }
 
     return (
         <div className="container-fluid">
             <Swiper className='swiper' modules={[Virtual]} spaceBetween={10} slidesPerView={6} virtual>
                 <div className="row">
-                    {productList.map((e, index) => (
-                        <SwiperSlide key={e.id} virtualIndex={index}>
+                    {result.map((e, index) => (
+                        <SwiperSlide key={e.id} virtualIndex = {index}>
                             {/* <Link className="d-flex justify-content-center h-100" to="/SingalPageProduct" onClick={()=>clickHandler(e,index)}> */}
-                            {/* onClick={() => clickHandler(e.id, index)} */}
-                            <Link productid={e.id} to={`/SingalPageProduct/${e.id}`} className="d-flex justify-content-center h-100"   key={e.id}>
+                            
+                            <Link productid = {e.id}  to={`/SingalPageProduct/${e.id}`} className="d-flex justify-content-center h-100" key={e.id} onClick={() => clickHandler(e.id, index)}>
+                            
                                 <div className="card-group">
                                     <div className="card " style={{ width: "12rem" }}>
                                         <div className='card-Top'>
