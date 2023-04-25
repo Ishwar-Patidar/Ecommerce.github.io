@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './TopElectronicSwiper.css'
 import 'swiper/css';
 import 'swiper/css/virtual';
-// import { dataContext } from './EcommerseContext/EcContext';
 import { useContext } from 'react';
 import proContext from './EcommerseContext/ApIContext/ProductContext';
 import { Link } from 'react-router-dom';
@@ -16,11 +15,14 @@ export default function TopElectronicSwiper() {
 
     const { productList, singalProduct, setSingalProduct, data } = useContext(proContext);
 
-    console.log(singalProduct)
+    const proData  = productList.filter(( pro ) => {
+        return pro.category == "topElectronic"
+        })
+
     if (data.length <= 0) {
-        var result = productList
+        var result = proData
     } else {
-        var result = productList.filter(e => e.newPrice == data);
+        var result = proData.filter(e => e.newPrice == data);
     }
 
     // .................for send object................

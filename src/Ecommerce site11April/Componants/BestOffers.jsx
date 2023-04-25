@@ -4,7 +4,7 @@ import BestOffersSwiper from "./BestOffersSwiper";
 function BestProducts() {
     return (
         <>
-            <div className="container-fluid mt-4">
+            <div className="container-fluid mt-4 ">
                 <div className="row">
                     <div className="d-flex justify-content-between">
                         <div className="d-flex">

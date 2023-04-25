@@ -1,13 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import proContext from "./EcommerseContext/ApIContext/ProductContext";
 import './SinglePageProduct.css';
 
 function SinglePageProduct() {
 
-    const { productList, singalProduct } = useContext(proContext); //get value from context
-    console.log(singalProduct);
-
+    const { productList, singalProduct, cartProducts, setCartProducts } = useContext(proContext); //get value from context
+    const [addedProduct, setAddedProduct] = useState([]);
     const { id } = useParams();
     const thisProduct = productList.find((e) => e.id == id);
 
@@ -33,11 +32,56 @@ function SinglePageProduct() {
         setItem(value);
     })
 
+    const addItemToCart = (thisProduct) => {
+        return (
+            console.log(addedProduct),
+            setCartProducts(thisProduct),
+            setAddedProduct((oldItem) => {
+                return (
+                    { ...oldItem, thisProduct }
+                )
+            })
+        )
+    }
+
+    //=================================================
+    const date = new Date();
+    date.setHours(23);
+    date.setMinutes(59);
+    date.setSeconds(59);
+
+    const [hour, setHour] = useState(date.getHours());
+    const [minute, setMinute] = useState(date.getMinutes());
+    const [second, setSecond] = useState(date.getSeconds());
+
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSecond((second) => second - 1);
+        }, [1000]);
+    }, [second]);
+    if (second == 0) {
+        setSecond(59);
+        setMinute(minute - 1);
+    }
+    if (minute == 0) {
+        setMinute(59);
+        setHour(hour - 1);
+    }
+    if (hour == 0) {
+        clearTimeout(setTimeout);
+    }
+
+
+
+    //=================================================
+
+
 
     return (
         <>
-            <div className="container-fluid">
-
+            <div className="container-fluid mb-5">
                 <div className="row my-3">
                     <div className="col-lg-6">
                         <div className="row">
@@ -77,7 +121,7 @@ function SinglePageProduct() {
                             {/* ........Button for Add to item in cart and like......... */}
                             <div className="d-flex mt-3">
                                 <button className="btn btn-outline-warning border-warning w-100 border rounded-pill mx-2 p-2"> Add to wish list </button>
-                                <button className="btn btn-warning border-warning w-100 border rounded-pill text-white mx-2 p-2"> Add to card </button>
+                                <button className="btn btn-warning border-warning w-100 border rounded-pill text-white mx-2 p-2" onClick={() => addItemToCart(thisProduct)}> Add to card </button>
                             </div>
                         </div>
                     </div>
@@ -125,7 +169,7 @@ function SinglePageProduct() {
 
                         <div>
                             <p> <strong> Do you want it on Saturday, July 29th? </strong>  Choose  <strong> Saturday Delivery  </strong>at checkout if you want your order delivered within 12 hours 43 minutes, <strong> <a href="#" className="text-primary"> Details. </a>   Gift wrapping is available.</strong></p>
-                            <p className="text-danger"> <strong>Special offer ends in 23:00:45 hours</strong></p>
+                            <p className="text-danger"> <strong>Special offer ends in <span className="text-primary"> {(hour + ":" + minute + ":" + second)} </span> hours</strong></p>
                         </div>
 
                         <div className="row">

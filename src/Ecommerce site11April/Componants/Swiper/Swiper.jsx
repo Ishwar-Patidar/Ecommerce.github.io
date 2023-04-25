@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";// Import Swiper React components
 import "swiper/css";
 import "swiper/css/navigation";
 import "./Swiper.css";
-import { Data } from "../Data";
 import { Navigation } from "swiper";// import required modules
+import proContext from "../EcommerseContext/ApIContext/ProductContext";
 
 
 export default function AppSwiper() {
+
+    const { productList, setProductList } = useContext(proContext);
+
+    const proData  = productList.filter(( pro ) => {
+    return pro.category == "todayTopDeals"
+    })
 
     return (
         <>
@@ -39,15 +45,15 @@ export default function AppSwiper() {
                         modules={[Navigation]}
                         className="Allrating"
                     >
-                        {Data.map((e) => {
+                        {proData.map((e) => {
                             return (
                                 <SwiperSlide key={e.id}>
                                     
                                     {/* ..................Card .............. */}
-                                    <Link className="d-flex justify-content-center" to="/SingalPageProduct">
+                                    <Link className="d-flex justify-content-center" to={`/SingalPageProduct/${e.id}`}>
                                         <div className="card" style={{ width: "14rem" }}>
                                             <div className='card-Top'>
-                                                <img src={e.img} className="position-relative  productImg  img-fluid card-img-top" alt={e.img} />
+                                                <img src={e.image} className="position-relative  productImg  img-fluid card-img-top" alt={e.img} />
                                                 <button className="productCrdBtn  border border-primary rounded-circle">
                                                     <div className="d-flex justify-content-center">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-heart-fill filledIcon d-block-hover" viewBox="0 0 16 16">

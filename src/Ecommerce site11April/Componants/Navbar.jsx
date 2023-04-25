@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import proContext from "./EcommerseContext/ApIContext/ProductContext";
-// import { dataContext } from "./EcommerseContext/EcContext";
 import './Navbar.css'
 import PersonDetail from "./PersonDetail";
 
@@ -24,7 +23,7 @@ function Navbar() {
                         <div className="col-md-2 col-sm-6 col-xs-6 order-lg-1">
                             <div className="d-flex">
                                 <div style={{ width: "25px" }} className="m-2 align-center">
-                                    <img className="img img-fluid me-2 " src = "./images/EcommerseImages/logo.png" alt="Logo" />
+                                <img className="img img-fluid me-2 " src = "/images/EcommerseImages/logo.png" alt="Logo" />
                                 </div>
                                 <a className="navbar-brand fs-4 fw-bolder text-black-50" href="#"> phoenix </a>
                             </div>
