@@ -20,7 +20,7 @@ export function ProductContext(props) {
   let myWishList = {};
 
   function AddedCart(Product, qty) {
-    console.log(qty)
+
     if (cartProductMap[Product.id]) {
       myProduct = cartProductMap[Product.id];
       myValue = myProduct.quantity += 1
@@ -43,7 +43,6 @@ export function ProductContext(props) {
     }
     wishListMap[Product.id] = myWishList;
     setItemWishList([...itemWishList])
-    console.log(itemWishList)
   }
 
   return (

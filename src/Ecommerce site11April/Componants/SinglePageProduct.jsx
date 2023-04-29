@@ -10,11 +10,6 @@ function SinglePageProduct() {
     const { id } = useParams();
     const thisProduct = productList.find((e) => e.id == id);
 
-    //............Match singal product id to main Datalist............
-    // const SingalProductData = productList.filter((value) => {
-    //     return value.id == singalProduct
-    // })
-
     //............Product Value Increment and Decrement for buy ..............
 
 
@@ -30,9 +25,6 @@ function SinglePageProduct() {
     function addItemWishList(thisProduct) {
         AddToWishList(thisProduct)
     }
-    
-
-   
 
     //=================================================
     const date = new Date();
