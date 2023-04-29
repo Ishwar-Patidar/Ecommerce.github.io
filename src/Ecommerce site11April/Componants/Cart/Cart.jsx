@@ -5,14 +5,12 @@ import Summary from "./Summary";
 function Cart() {
     return (
         <>
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
-                    <div className="col-lg-8">
+                    <div className="col-lg-12">
                         <ProductDetail />
                     </div>
-                    <div className="col-lg-4">
-                        <Summary />
-                    </div>
+                   
                 </div>
             </div>
         </>

@@ -1,10 +1,13 @@
 import React from "react";
+import D from "../../D";
 
 function ShipingInformation() {
 
     return (
         <>
-            <div>ShipingInformation</div>
+            <div>
+                <D/>
+                ShipingInformation</div>
         </>
     )
 }

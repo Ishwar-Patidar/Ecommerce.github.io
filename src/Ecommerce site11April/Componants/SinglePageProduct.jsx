@@ -5,8 +5,8 @@ import './SinglePageProduct.css';
 
 function SinglePageProduct() {
 
-    const { productList, singalProduct, cartProducts, setCartProducts } = useContext(proContext); //get value from context
-    const [addedProduct, setAddedProduct] = useState([]);
+    const { productList, AddedCart, cartItems, item, setItem, RemovedCart } = useContext(proContext); //get value from context
+
     const { id } = useParams();
     const thisProduct = productList.find((e) => e.id == id);
 
@@ -16,33 +16,18 @@ function SinglePageProduct() {
     // })
 
     //............Product Value Increment and Decrement for buy ..............
-    const [item, setItem] = useState(1);
-    const Increment = () => {
-        return setItem(item + 1)
-    }
-    const Decrement = () => {
-        if (item === 1) {
-            setItem(1)
-        } else {
-            return setItem(item - 1)
-        }
-    }
+
+
     const changeInputHandler = ((e) => {
         const value = e.target.value;
         setItem(value);
     })
 
-    const addItemToCart = (thisProduct) => {
-        return (
-            console.log(addedProduct),
-            setCartProducts(thisProduct),
-            setAddedProduct((oldItem) => {
-                return (
-                    { ...oldItem, thisProduct }
-                )
-            })
-        )
+   function addItemToCart(thisProduct){
+        AddedCart(thisProduct, 1)
     }
+
+   
 
     //=================================================
     const date = new Date();
@@ -188,12 +173,11 @@ function SinglePageProduct() {
                             <div className="col-md-6">
                                 <span className="my-2"> Quantity: </span> <br />
                                 <div className="d-flex my-3">
-                                    <button className="btn btn-outline-secondary px-3" onClick={Decrement}> - </button>
+                                    <button className="btn btn-outline-secondary px-3" onClick={() => RemovedCart()}> - </button>
                                     <input className="form-control text-center w-25" type="text" placeholder="2" value={item} onChange={changeInputHandler} />
-                                    <button className="btn btn-outline-secondary px-3" onClick={Increment}> + </button>
+                                    <button className="btn btn-outline-secondary px-3" > + </button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

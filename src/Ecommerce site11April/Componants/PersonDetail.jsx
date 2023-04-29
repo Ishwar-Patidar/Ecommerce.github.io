@@ -8,7 +8,7 @@ function PersonDetail() {
                     <div className="col-lg-12  d-flex justify-content-center">
                         <div className="w-100">
                             <div className="profileImg mx-auto">
-                                <img className="img profileImage img-fluid" src="./images/Img/Book.jpeg" alt="" />
+                                <img className="img profileImage img-fluid" src="/images/Img/Book.jpeg" alt="" />
                                 <span> IshwarPatidar </span>
                             </div>
                             <div className="mx-auto">
