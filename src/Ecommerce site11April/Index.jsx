@@ -12,6 +12,7 @@ import Menubar from "./Componants/Menubar";
 import Navbar from "./Componants/Navbar";
 import Footer from "./Componants/Footer";
 import SinglePageProduct from "./Componants/SinglePageProduct";
+import AddUser from "./Componants/addUser/AddUser";
 
 
 function Index() {
@@ -30,6 +31,7 @@ function Index() {
                 <Route path="track" element={<TrackOrderPage />} />
                 <Route path="checkout" element={<CheckOutPage />} />
                 <Route path="*" element={<Home />} />
+                <Route path="addUser" element={<AddUser />} />
             </Routes>
             <Footer />
 

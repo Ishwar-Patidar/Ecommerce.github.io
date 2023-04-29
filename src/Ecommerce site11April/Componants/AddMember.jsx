@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import './AddMember.css'
 function AddMember() {
+
     return (
         <>
             <div className="container mt-5">
@@ -17,7 +19,9 @@ function AddMember() {
                         </h3>
                         <br />
                         <span className=" mb-4 LineHeight"> Become a <span className="text-warning"> member </span> today! </span><br />
-                        <button className="btn btn-primary signUpBtn mt-4 "> Sign up &#62; </button>
+                        <button className="btn btn-primary signUpBtn mt-4 ">
+                            <Link to="/addUser">  Sign up &#62;</Link>
+                        </button>
                     </div>
                 </div>
             </div>
