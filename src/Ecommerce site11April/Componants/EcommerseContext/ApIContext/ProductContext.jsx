@@ -43,7 +43,6 @@ export function ProductContext(props) {
     }
     wishListMap[Product.id] = myWishList;
     setItemWishList([...itemWishList])
-    console.log(itemWishList)
   }
 
   return (
@@ -60,7 +59,8 @@ export function ProductContext(props) {
                                   setCartItems,
                                   item,
                                   setItem,
-                                  AddToWishList}}>
+                                  AddToWishList,
+                                  itemWishList}}>
       {props.children}
     </proContext.Provider>
   )

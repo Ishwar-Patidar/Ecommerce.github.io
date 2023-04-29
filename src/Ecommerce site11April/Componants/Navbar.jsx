@@ -1,12 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import proContext from "./EcommerseContext/ApIContext/ProductContext";
 import './Navbar.css'
 import PersonDetail from "./PersonDetail";
 
 function Navbar() {
 
+    const { data, setData, itemWishList, cartItems } = useContext(proContext);
 
-    const { data, setData } = useContext(proContext);
+    const [wishListCount, setWishListCount] = useState("");
+    const [cartProductCount, setcartProductCount] = useState(undefined);
+
+    useEffect(() => {
+      const  cartProductCount = cartItems.length
+        setcartProductCount(cartProductCount)
+    },[cartItems])
+
     function searchHandler(event) {
         const value = event.target.value;
         setData(value);
@@ -46,7 +54,7 @@ function Navbar() {
                                                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                                             </svg>
                                             <span className="position-absolute top-2 start-80 translate-middle badge rounded-pill bg-primary" style={{ fontSize: "11px" }}>
-                                                8
+                                                {cartProductCount}
                                                 <span className="visually-hidden">unread messages</span>
                                             </span>
                                         </a>
