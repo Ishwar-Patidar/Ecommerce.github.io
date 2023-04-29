@@ -5,7 +5,7 @@ import './SinglePageProduct.css';
 
 function SinglePageProduct() {
 
-    const { productList, AddedCart, cartItems, item, setItem, RemovedCart } = useContext(proContext); //get value from context
+    const { productList, AddedCart, cartItems, item, setItem, RemovedCart, AddToWishList } = useContext(proContext); //get value from context
 
     const { id } = useParams();
     const thisProduct = productList.find((e) => e.id == id);
@@ -26,6 +26,11 @@ function SinglePageProduct() {
    function addItemToCart(thisProduct){
         AddedCart(thisProduct, 1)
     }
+
+    function addItemWishList(thisProduct) {
+        AddToWishList(thisProduct)
+    }
+    
 
    
 
@@ -105,7 +110,7 @@ function SinglePageProduct() {
 
                             {/* ........Button for Add to item in cart and like......... */}
                             <div className="d-flex mt-3">
-                                <button className="btn btn-outline-warning border-warning w-100 border rounded-pill mx-2 p-2"> Add to wish list </button>
+                                <button className="btn btn-outline-warning border-warning w-100 border rounded-pill mx-2 p-2" onClick={() => addItemWishList(thisProduct)}> Add to wish list </button>
                                 <button className="btn btn-warning border-warning w-100 border rounded-pill text-white mx-2 p-2" onClick={() => addItemToCart(thisProduct)}> Add to card </button>
                             </div>
                         </div>
