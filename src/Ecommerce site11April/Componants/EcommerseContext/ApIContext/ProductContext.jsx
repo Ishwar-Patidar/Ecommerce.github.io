@@ -19,14 +19,14 @@ export function ProductContext(props) {
   let myValue = {};
   let myWishList = {};
 
-  function AddedCart(Product, qty) {
+  function AddedCart(Product) {
 
     if (cartProductMap[Product.id]) {
       myProduct = cartProductMap[Product.id];
-      myValue = myProduct.quantity += 1
+      myValue = myProduct.quantity += 0
     } else {
       myProduct = Product
-      myProduct["quantity"] = qty
+      myProduct["quantity"] = 1
       cartItems.push(myProduct)
     }
     cartProductMap[Product.id] = myProduct;

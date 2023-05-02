@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const CateItem = [
     { id: "1", title: "Collectibles & Art", item1: "Collectibles", Item2: "Antiques", item3: "Sports memorabilia", Item4: "Art", },
@@ -25,10 +26,10 @@ function CategoryModal() {
                                     <div className = " card-body d-flex flex-column " >
                                         <ul className = " list-unstyled ">
                                             <li> <h5 className="card-title">{event.title}</h5></li>
-                                            <li> <a href="#" className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.Item2}</a></li>
-                                            <li> <a href="#" className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.item1}</a></li>
-                                            <li> <a href="#" className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.item3}</a></li>
-                                            <li> <a href="#" className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.Item4}</a></li>
+                                            <li> <NavLink href={"#"} className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.Item2}</NavLink></li>
+                                            <li> <NavLink href={"#"} className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.item1}</NavLink></li>
+                                            <li> <NavLink href={"#"} className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.item3}</NavLink></li>
+                                            <li> <NavLink href={"#"} className=" text-dark  card-link text-decoration-none hover-bg-100 px-1 py-1 " >{event.Item4}</NavLink></li>
                                         </ul>
                                     </div>
                                 </div>

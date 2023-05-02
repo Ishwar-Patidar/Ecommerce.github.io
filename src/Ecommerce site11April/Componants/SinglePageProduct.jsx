@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import proContext from "./EcommerseContext/ApIContext/ProductContext";
 import './SinglePageProduct.css';
 
@@ -139,7 +139,7 @@ function SinglePageProduct() {
 
                         <div className="mt-1">
                             <span className="bestSller border rounded-pill"> #1Best seller </span>
-                            <a href="#" className="text-primary ps-3 pe-3 pt-1 pb-1"> in Phoenix sell analytics 2021</a>
+                            <NavLink href={"#"} className="text-primary ps-3 pe-3 pt-1 pb-1"> in Phoenix sell analytics 2021</NavLink>
                         </div>
 
                         <div>
@@ -150,7 +150,7 @@ function SinglePageProduct() {
                         </div>
 
                         <div>
-                            <p> <strong> Do you want it on Saturday, July 29th? </strong>  Choose  <strong> Saturday Delivery  </strong>at checkout if you want your order delivered within 12 hours 43 minutes, <strong> <a href="#" className="text-primary"> Details. </a>   Gift wrapping is available.</strong></p>
+                            <p> <strong> Do you want it on Saturday, July 29th? </strong>  Choose  <strong> Saturday Delivery  </strong>at checkout if you want your order delivered within 12 hours 43 minutes, <strong> <NavLink href="#" className="text-primary"> Details. </NavLink>   Gift wrapping is available.</strong></p>
                             <p className="text-danger"> <strong>Special offer ends in <span className="text-primary"> {(hour + ":" + minute + ":" + second)} </span> hours</strong></p>
                         </div>
 
@@ -163,7 +163,7 @@ function SinglePageProduct() {
                                     <option value="2">32</option>
                                 </select>
                                 <span>
-                                    <a href="#" className="text-primary ChartSize mx-2"> Size chart </a>
+                                    <NavLink href={"#"} className="text-primary ChartSize mx-2"> Size chart </NavLink>
                                 </span>
                             </div>
 

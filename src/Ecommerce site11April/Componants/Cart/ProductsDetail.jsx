@@ -1,27 +1,33 @@
 import React, { useContext, useState } from "react";
-import './ProductDetail.css'
+import './ProductDetail.css';
 import proContext from "../EcommerseContext/ApIContext/ProductContext";
+import { NavLink } from "react-router-dom";
 
 function ProductDetail() {
 
     const { cartItems, setCartItems, AddedCart } = useContext(proContext);
-
     function incrementItem(item) {
-        // AddedCart(item, item.quantity)
+        AddedCart(item, item.quantity)
         cartItems.map((product) => {
+            if (product.quantity < 1) {
+                product.quantity = 0
+            }
             if (product.id === item.id) {
                 product.quantity += 1
             }
-            setCartItems([...cartItems])
+            else {
+                setCartItems([...cartItems])
+            }
         })
     }
+
 
     function decrementItem(item) {
         cartItems.map((product) => {
             if (product.id === item.id) {
                 product.quantity -= 1
             }
-            if (product.quantity < 0) {
+            if (product.quantity < 1) {
                 product.quantity = 1
             }
             else {
@@ -30,16 +36,18 @@ function ProductDetail() {
         })
     }
 
-    function inputChangeHandler(product, e) {
-        let A = (Number(e.nativeEvent.data))
-
-        if (isNumber(A)) {
+    function inputChangeHandler(product, elem) {
+        const value = elem.target.value;
+        let num = (Number(value))
+        if (isNumber(num)) {
             return;
         }
-        if (e.nativeEvent.data < 0) {
+        if (value < 1) {
+            product.quantity = 1
+            AddedCart(product, product.quantity)
             return;
         } else {
-            product.quantity = Number(e.nativeEvent.data)
+            product.quantity = Number(value)
             AddedCart(product, product.quantity)
         }
     }
@@ -48,17 +56,11 @@ function ProductDetail() {
         if (typeof (value) === Number) {
             return value;
         } else {
-
-        }
-    }
+        }}
 
     function removeAddedItem(e, item, index) {
-
-
-        const CIL = cartItems.filter((elem) => {
-            return elem.id !== item.id
-        });
-        cartItems([...CIL])
+        cartItems.splice(index, 1)
+        setCartItems([...cartItems])
     }
 
     let totalAmount = 0;
@@ -69,15 +71,15 @@ function ProductDetail() {
                     <h3> Cart </h3>
                 </div>
                 <div className="row">
-                    <table className="table table-bordered  text-center text-align-center">
+                    <table className="table table-bordered  text-center text-align-center tableFont">
                         <thead>
                             <tr>
                                 <th colSpan={2} className='products'> Products </th>
                                 <th className='Color' >  Color </th>
                                 <th className='Size' > Size </th>
                                 <th className='Price' > Price </th>
-                                <th className='Quantity' > Quantity </th>
-                                <th className='Total' > Total </th>
+                                <th className='tdWidth' > Quantity </th>
+                                <th className='tdWidth' > Total </th>
                                 <th className='deletebtn' ></th>
                             </tr>
                         </thead>
@@ -86,19 +88,19 @@ function ProductDetail() {
                             {cartItems && cartItems.map((item, index) => {
                                 let Total = item.newPrice * item.quantity
                                 totalAmount = Total + totalAmount;
-                                return (<tr key={item.id} >
+                                return (<tr key={item.id} className=" align-middle"  >
 
-                                    <td> <img className="img img-fluid" src={item.image} alt="...Loading" height="50px" width="50px" /> </td>
-                                    <td> <a href="#" className="text-primary"> {item.cartTitle}  </a></td>
+                                    <td> <img className="img img-fluid rounded" src={item.image} alt="...Loading" height="80px" width="80px" /> </td>
+                                    <td> <NavLink href={"#"} className="text-primary"> {item.cartTitle}  </NavLink></td>
                                     <td> red </td>
                                     <td> xl </td>
                                     <td> Rs{item.newPrice}</td>
-                                    <td className="d-flex justify-content-center text-center">
-                                        <button className="btn btn-danger pe-2" onClick={() => decrementItem(item)}>-</button>
-                                        <input className=" qtyInput px-2 text-center" type="number" value={item.quantity} onChange={(e) => inputChangeHandler(item, e)} />
+                                    <td className="d-flex justify-content-center text-center pt-3">
+                                        <button className="btn btn-danger pe-2" onClick={() => decrementItem(item)}> - </button>
+                                        <input type="number" className=" qtyInput px-2 text-center" name={index} value={item.quantity} onChange={(e) => inputChangeHandler(item, e)} />
                                         <button className=" btn btn-success ps-2" onClick={() => incrementItem(item)} > + </button>
                                     </td>
-                                    <td>Rs{Total}</td>
+                                    <td>Rs{Total.toFixed(2)}</td>
                                     <td>
                                         <button className="btn text-danger" onClick={(e) => removeAddedItem(e, item, index)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -113,8 +115,11 @@ function ProductDetail() {
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colSpan={6}>TotalAmount</td>
-                                <td> Rs{totalAmount} </td>
+
+                                <td colSpan={2}>Total Item : {cartItems.length} </td>
+                                <td colSpan={4}>TotalAmount</td>
+                                <td> Rs{totalAmount.toFixed(2)} </td>
+                                <td></td>
                             </tr>
                         </tfoot>
                     </table>

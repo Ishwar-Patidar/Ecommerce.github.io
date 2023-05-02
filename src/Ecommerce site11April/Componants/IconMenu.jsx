@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './IconMenu.css'
 function IconMenu() {
     return (
@@ -6,7 +7,7 @@ function IconMenu() {
             <div className="container-fluid">
                 <div className="row">
                     <div className="d-flex justify-content-between overflow-auto">
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background  p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-star fw-bolder" viewBox="0 0 16 16">
@@ -17,8 +18,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Deals
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-wrench" viewBox="0 0 16 16">
@@ -29,8 +30,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Tools
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-airplane" viewBox="0 0 16 16">
@@ -41,8 +42,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Travel
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-watch" viewBox="0 0 16 16">
@@ -54,8 +55,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Fashion
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-phone" viewBox="0 0 16 16">
@@ -67,8 +68,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Mobile
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-house" viewBox="0 0 16 16">
@@ -79,8 +80,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Home
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-lamp" viewBox="0 0 16 16">
@@ -92,8 +93,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Dining
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-gift" viewBox="0 0 16 16">
@@ -104,8 +105,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Gift
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-palette" viewBox="0 0 16 16">
@@ -117,8 +118,8 @@ function IconMenu() {
                             <span className="font-Size text-dark">
                                 Other
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none textjustify-content-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none textjustify-content-center" href={"#"}>
                             <div className="  icon-background p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
@@ -129,8 +130,8 @@ function IconMenu() {
                             <span className="font-Size text-dark text-black">
                                 Electronic
                             </span>
-                        </a>
-                        <a className=" m-2 text-decoration-none text-center" href="#">
+                        </NavLink>
+                        <NavLink className=" m-2 text-decoration-none text-center" href={"#"}>
                             <div className=" icon-background  p-2">
                                 <span className="fs-bolder ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-bag" viewBox="0 0 16 16">
@@ -141,7 +142,7 @@ function IconMenu() {
                             <span className="font-Size text-dark text-dark">
                                 Grocery
                             </span>
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import BestOffersSwiper from "./BestOffersSwiper";
 
 function BestProducts() {
@@ -11,7 +12,7 @@ function BestProducts() {
                             <h3 className="productHeading fw-bolder">Best Offers</h3>
                         </div>
                         <div className="d-flex fw-bolder ">
-                            <a className="text-primary" href="#">Explore More </a> &nbsp;
+                            <NavLink className="text-primary" href={"#"}>Explore More </NavLink> &nbsp;
                             <span className="text-primary"> &#62; </span>
                         </div>
                     </div>
