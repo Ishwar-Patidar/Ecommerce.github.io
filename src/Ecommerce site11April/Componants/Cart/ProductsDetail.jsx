@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 function ProductDetail() {
 
-    const { cartItems, setCartItems, AddedCart } = useContext(proContext);
+    const { cartItems, setCartItems, AddedCart } = useContext( proContext );
     function incrementItem(item) {
         AddedCart(item, item.quantity)
         cartItems.map((product) => {
@@ -21,13 +21,12 @@ function ProductDetail() {
         })
     }
 
-
     function decrementItem(item) {
         cartItems.map((product) => {
-            if (product.id === item.id) {
+            if ( product.id === item.id ) {
                 product.quantity -= 1
             }
-            if (product.quantity < 1) {
+            if ( product.quantity < 1 ) {
                 product.quantity = 1
             }
             else {
@@ -38,8 +37,8 @@ function ProductDetail() {
 
     function inputChangeHandler(product, elem) {
         const value = elem.target.value;
-        let num = (Number(value))
-        if (isNumber(num)) {
+        let num = (value)
+        if (isNumber ( num )) {
             return;
         }
         if (value < 1) {
@@ -47,13 +46,13 @@ function ProductDetail() {
             AddedCart(product, product.quantity)
             return;
         } else {
-            product.quantity = Number(value)
+            product.quantity = value
             AddedCart(product, product.quantity)
         }
     }
 
     function isNumber(value) {
-        if (typeof (value) === Number) {
+        if ( typeof ( value ) === Number ) {
             return value;
         } else {
         }}

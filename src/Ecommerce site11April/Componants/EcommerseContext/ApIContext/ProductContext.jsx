@@ -16,23 +16,20 @@ export function ProductContext(props) {
   const [item, setItem] = useState([]);
 
   let myProduct = {};
-  let myValue = {};
   let myWishList = {};
 
   function AddedCart(Product) {
-
     if (cartProductMap[Product.id]) {
-      myProduct = cartProductMap[Product.id];
-      myValue = myProduct.quantity += 0
+      myProduct = cartProductMap[Product.id]
+      // myProduct.quantity += 0
     } else {
       myProduct = Product
       myProduct["quantity"] = 1
       cartItems.push(myProduct)
     }
     cartProductMap[Product.id] = myProduct;
-     setCartItems([...cartItems])
+    setCartItems([...cartItems])
   }
-
 
   function AddToWishList(Product) {
     if (wishListMap[Product.id]) {
@@ -46,20 +43,22 @@ export function ProductContext(props) {
   }
 
   return (
-    <proContext.Provider value={{ productList,
-                                  setProductList,
-                                  singalProduct,
-                                  setSingalProduct,
-                                  data,
-                                  setData,
-                                  cartProduct,
-                                  setCartProducts,
-                                  AddedCart,
-                                  cartItems,
-                                  setCartItems,
-                                  item,
-                                  setItem,
-                                  AddToWishList}}>
+    <proContext.Provider value={{
+      productList,
+      setProductList,
+      singalProduct,
+      setSingalProduct,
+      data,
+      setData,
+      cartProduct,
+      setCartProducts,
+      AddedCart,
+      cartItems,
+      setCartItems,
+      item,
+      setItem,
+      AddToWishList
+    }}>
       {props.children}
     </proContext.Provider>
   )
