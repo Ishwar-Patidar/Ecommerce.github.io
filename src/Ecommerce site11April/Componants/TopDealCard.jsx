@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import AppSwiper from "./Swiper/Swiper";
 
 function TopDealcard() {
@@ -22,7 +23,7 @@ function TopDealcard() {
                                 </span>
                             </div>
                             <div className="d-flex fw-bolder">
-                                <a className="text-primary" href="#"> Explor More </a> &nbsp;
+                                <NavLink className="text-primary" href={"#"}> Explor More </NavLink> &nbsp;
                                 <span className="text-primary"> &#62; </span>
                             </div>
                         </div>

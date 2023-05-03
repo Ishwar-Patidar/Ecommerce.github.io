@@ -19,18 +19,17 @@ export function ProductContext(props) {
   let myValue = {};
   let myWishList = {};
 
-  function AddedCart(Product, qty) {
-    console.log(qty)
+  function AddedCart(Product) {
     if (cartProductMap[Product.id]) {
-      myProduct = cartProductMap[Product.id];
-      myValue = myProduct.quantity += 1
+      myProduct = cartProductMap[Product.id]
+      // myProduct.quantity += 0
     } else {
       myProduct = Product
-      myProduct["quantity"] = qty
+      myProduct["quantity"] = 1
       cartItems.push(myProduct)
     }
     cartProductMap[Product.id] = myProduct;
-     setCartItems([...cartItems])
+    setCartItems([...cartItems])
   }
 
 
@@ -43,6 +42,7 @@ export function ProductContext(props) {
     }
     wishListMap[Product.id] = myWishList;
     setItemWishList([...itemWishList])
+    console.log(itemWishList)
   }
 
   return (
@@ -60,7 +60,7 @@ export function ProductContext(props) {
                                   item,
                                   setItem,
                                   AddToWishList,
-                                  itemWishList}}>
+                                   itemWishList}}>
       {props.children}
     </proContext.Provider>
   )
