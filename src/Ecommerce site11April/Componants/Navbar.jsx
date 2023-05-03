@@ -59,7 +59,6 @@ function Navbar() {
                                             <Link className="nav-link position-absolute top-2 start-80 translate-middle badge rounded-pill bg-primary" to="/store">{cartProductCount ? cartProductCount : ''}</Link>
                                             </span>
                                                 <span className="visually-hidden">unread messages</span>
-                                        </a>
                                         </NavLink>
                                     </li>
 
