@@ -4,9 +4,12 @@ import './AddUser.css';
 
 function AddUser() {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, getValues, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
-
+   
+    function submitHandler(){
+        (Object.keys(errors).length === 0) ? console.log(true):console.log(false)
+    }
     return (
         <>
             <div className="container-fluid mt-2 mb-5 ">
@@ -23,7 +26,8 @@ function AddUser() {
                         <form action="" className="signUpForm" onSubmit={handleSubmit(onSubmit)}>
 
                             <label htmlFor="" className="w-100 mb-3 px-1"> Name
-                                <input className="form-control " type="text" placeholder="Name" {...register("firstName")} />
+                                <input className="form-control " type="text" placeholder="Name" {...register("firstName", { required: true })} />
+                                {errors.firstName && <span className="text-danger"> This field is required </span>}
                             </label> <br />
 
                             <label htmlFor="" className="w-100 mb-3 px-1"> Email
@@ -42,10 +46,16 @@ function AddUser() {
                             </label>
 
                             <span className="term_condition">
-                                <input type="checkbox" className="checkbox" required/> I accept the <a className="text-primary" href="#">terms</a> and <a className="text-primary" href="#">privacy policy</a>
+                                <input type="checkbox" className="checkbox" required = {(Object.keys(errors).length === 0 ) ? false : true ? true : false } /> I accept the <a className="text-primary" href="#">terms</a> and <a className="text-primary" href="#">privacy policy</a>
+                                {/* <br /> {errors.checkbox && <span className="text-danger">  Check the term and privacy policy  </span>} */}
                             </span> <br />
 
-                            <button className="btn btn-primary mt-4 w-100" type="submit"> Sign Up </button> <br />
+
+                            <div style={{ color: "red" }}>
+                                {Object.keys(errors).length < 0 &&
+                                    true}
+                            </div>
+                            <button className="btn btn-primary mt-4 w-100" type="submit" onClick={submitHandler}> Sign Up </button> <br />
 
                             <div className="text-center mt-3" ><a className="text-primary fs-6 fw-bolder " href="#"> Sign in to an existing account </a></div>
                         </form>
