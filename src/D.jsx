@@ -9,10 +9,15 @@ function D() {
     //     });
     // });
     // console.log(result);
-
-    return (
+    const user = {
+        name: "Hayes",
+        id: 0,
+      };
+    return (    
         <>
-        <input type="number"   />
+        <div>
+          Hello
+        </div>
         </>
     )
 }
