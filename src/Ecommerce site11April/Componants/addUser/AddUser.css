@@ -1,0 +1,45 @@
+.signUpForm {
+    font-size: 0.8rem;
+}
+
+.signUpForm label {
+    font-weight: 600;
+}
+
+.signUpForm input {
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+    height: 2.5rem;
+    font-size: 0.8rem;
+}
+
+.signUpLogo {
+    height: 78px;
+    width: 90px;
+}
+
+.Profile h5 {
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+
+.Profile span {
+    font-size: 1rem;
+   opacity: 0.8;
+    letter-spacing: 0.05rem;
+}
+
+.checkbox {
+    margin-top: 0.5rem;
+    margin-bottom: 0 !important;
+    height: 0.8rem !important;
+    font-size: 0rem;
+    margin-right: 0.6rem;
+}
+
+.term_condition {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.7;
+   
+}
